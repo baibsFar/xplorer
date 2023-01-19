@@ -1,3 +1,6 @@
-import { Main } from './src/main.js'
+import { Server } from './src/server.js'
+// import { Main } from './src/main.js'
 
-Main()
+// Main()
+
+Server()
