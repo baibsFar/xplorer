@@ -1,0 +1,21 @@
+{
+  "name": "file-explorer-node",
+  "version": "1.0.0",
+  "description": "File explorer",
+  "main": "index.js",
+  "author": "Baibs Fararano<fararano.kevin@gmail.com>, Fuji Ghost<fujitefisan@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "clear && node index.js",
+    "start": "clear && npx nodemon index.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  },
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

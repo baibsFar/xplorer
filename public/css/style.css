@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/font/Quicksand.ttf');
+}
+
+:root {
+  --success: #d5ff80;
+  --danger: #cc3333;
+  --primary: #497ce3;
+  --warn: #fbbc06;
+  --dark: #1f2430;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  box-sizing: border-box;
+  font-family: 'Quicksand';
+}
+
+*::-webkit-scrollbar { display: none; }
+
+body { background-color: var(--dark); }
+
+a { text-decoration: none; }
