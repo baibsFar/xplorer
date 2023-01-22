@@ -1,4 +1,3 @@
-import { createReadStream } from 'fs'
 import { readdir, lstat } from 'fs/promises'
 
 const KB = 1024
