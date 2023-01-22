@@ -2,6 +2,7 @@ import express from 'express'
 import path from 'path'
 import { HOME_DIR } from '../data/info.js'
 import { logActivities } from '../middlewares/app.middleware.js'
+import { HOME_DIR } from '../data/info.js'
 
 const app = express()
 
