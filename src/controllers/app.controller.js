@@ -5,7 +5,7 @@ import { username as host } from '../data/info.js'
 import { lstat } from 'fs/promises'
 
 function AppController() {
-    app.use(async (req, res, next) => {
+    app.use(async (req, res) => {
         try {
             const path = homedir() + decodeURI(req.path)
             const stats = await lstat(path)
@@ -19,7 +19,6 @@ function AppController() {
             console.error(e)
             res.json({ message: e })
         }
-        next()
     })
 }
 
