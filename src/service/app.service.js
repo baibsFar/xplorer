@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8d26760 (fix: adding static setup for sending file)
 import { createReadStream } from 'fs'
 import { readdir, lstat } from 'fs/promises'
 =======

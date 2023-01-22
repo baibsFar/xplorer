@@ -15,7 +15,7 @@ import { downloadFile, arrangeDirData } from '../service/app.service.js'
 >>>>>>> 9875abf (feat: back functionnalities)
 
 function AppController() {
-    app.use(async (req, res, next) => {
+    app.use(async (req, res) => {
         try {
             const path = homedir() + decodeURI(req.path)
 <<<<<<< HEAD
@@ -41,9 +41,12 @@ function AppController() {
             else res.json(await arrangeDirData(path))
         } catch (e) {
             console.error(e)
+<<<<<<< HEAD
 >>>>>>> 9875abf (feat: back functionnalities)
+=======
+            res.json({ message: e })
+>>>>>>> 8d26760 (fix: adding static setup for sending file)
         }
-        next()
     })
 }
 

@@ -6,9 +6,12 @@ import express from 'express'
 import path from 'path'
 import { logActivities } from '../middlewares/app.middleware.js'
 import { HOME_DIR } from '../data/info.js'
+<<<<<<< HEAD
 =======
 import { logActivities } from '../middlewares/app.middleware.js'
 >>>>>>> 9875abf (feat: back functionnalities)
+=======
+>>>>>>> 8d26760 (fix: adding static setup for sending file)
 
 const app = express()
 
@@ -22,6 +25,7 @@ app.set(path.join(path.resolve('../'), 'views'))
 app.use(logActivities())
 app.use(express.static('views'))
 <<<<<<< HEAD
+<<<<<<< HEAD
 app.use(express.static('public'))
 app.use(express.static(HOME_DIR, { dotfiles: 'allow' }))
 =======
@@ -29,5 +33,9 @@ app.use(logActivities())
 >>>>>>> 9875abf (feat: back functionnalities)
 =======
 >>>>>>> 79a04ef (feat: setting view path ; fix: symbolic link)
+=======
+app.use(express.static('public'))
+app.use(express.static(HOME_DIR))
+>>>>>>> 8d26760 (fix: adding static setup for sending file)
 
 export { app }
