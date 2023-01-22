@@ -27,10 +27,14 @@ async function downloadFile(res, path, filesize) {
     res.setHeader('Transfer-Encoding', 'deflate')
     res.setHeader('Content-Length', filesize)
 <<<<<<< HEAD
+<<<<<<< HEAD
     res.sendFile(path)
 =======
     res.sendFile(file)
 >>>>>>> 9875abf (feat: back functionnalities)
+=======
+    res.sendFile(path)
+>>>>>>> 79a04ef (feat: setting view path ; fix: symbolic link)
 }
 
 /**
