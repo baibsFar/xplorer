@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8d26760 (fix: adding static setup for sending file)
-import { createReadStream } from 'fs'
 import { readdir, lstat } from 'fs/promises'
-=======
-import { readdir, stat } from 'fs/promises'
->>>>>>> 9875abf (feat: back functionnalities)
-=======
-import { readdir, lstat } from 'fs/promises'
->>>>>>> fb33eaf (fix: file & link stat)
 
 const KB = 1024
 const SIZE_LEVEL = ['B', 'KB', 'MB', 'GB', 'TB']
@@ -29,15 +17,7 @@ async function downloadFile(res, path, filesize) {
     res.setHeader('Content-Type', 'application/octet-stream')
     res.setHeader('Transfer-Encoding', 'deflate')
     res.setHeader('Content-Length', filesize)
-<<<<<<< HEAD
-<<<<<<< HEAD
     res.sendFile(path)
-=======
-    res.sendFile(file)
->>>>>>> 9875abf (feat: back functionnalities)
-=======
-    res.sendFile(path)
->>>>>>> 79a04ef (feat: setting view path ; fix: symbolic link)
 }
 
 /**
@@ -78,29 +58,13 @@ async function arrangeDirData(path) {
     
     const directories = []
     const files = []
-<<<<<<< HEAD
-<<<<<<< HEAD
     
-    for (let dir of dirs) {
-        const dirent = await lstat(path + '/' + dir)
-
-        if (!dirent.isSymbolicLink()) {
-            if (dirent.isFile())
-                files.push(createFileInfo(dir, dirent.mtime, dirent.birthtime, dirent.size))
-            else directories.push(createFileInfo(dir, dirent.mtime, dirent.birthtime))
-        }
-=======
-
-=======
-    
->>>>>>> fb33eaf (fix: file & link stat)
     for (let dir of dirs) {
         const dirent = await lstat(path + '/' + dir)
 
         if (dirent.isFile())
             files.push(createFileInfo(dir, dirent.mtime, dirent.birthtime, dirent.size))
         else directories.push(createFileInfo(dir, dirent.mtime, dirent.birthtime))
->>>>>>> 9875abf (feat: back functionnalities)
     }
 
     return { directories, files }
