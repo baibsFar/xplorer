@@ -2,6 +2,7 @@ import { app } from '../modules/app.module.js'
 import { lstat } from 'fs/promises'
 import { homedir } from 'os'
 import { downloadFile, arrangeDirData } from '../service/app.service.js'
+import { username as host } from '../data/info.js'
 
 function AppController() {
     app.use(async (req, res) => {
@@ -10,7 +11,10 @@ function AppController() {
             const stats = await lstat(path)
             if (stats.isFile()) downloadFile(res, path, stats.size)
             else if (stats.isSymbolicLink()) res.json({ message: 'Link or Symbolic Link' })
-            else res.json(await arrangeDirData(path))
+            else {
+                const { directories, files } = await arrangeDirData(path)
+                res.render('file-explorer', { directories, files, host })
+            }
         } catch (e) {
             console.error(e)
             res.json({ message: e })

@@ -15,17 +15,17 @@
     <div class="sidebar-container">
       <div class="profile-container">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2Z"/><path d="M4.271 18.346S6.5 15.5 12 15.5s7.73 2.846 7.73 2.846M12 12a3 3 0 1 0 0-6a3 3 0 0 0 0 6Z"/></g></svg>
-        <h1 style="text-align: center;">Host <br> [<%= username %>]</h1>
+        <h1 style="text-align: center;">Host <br> [<%= host %>]</h1>
       </div>
       <div class="file-tree-container">
         <% for(let file of files) { %>
-          <a href="#" class="file-or-dir" title="<%= file.name %>">
+          <a href="<%= file.name %>" class="file-or-dir" title="<%= file.name %>">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M13 4H6v16h12V9h-5z" opacity=".3"/><path fill="currentColor" d="m20 8l-6-6H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8zm-2 12H6V4h7v5h5v11z"/></svg>
             <%= file.name %>
           </a>
         <% } %>
         <% for(let dir of directories) { %>
-          <a href="#" class="file-or-dir" title="<%= dir.name %>">
+          <a href="<%= dir.name %>" class="file-or-dir" title="<%= dir.name %>">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M4 8h16v10H4z" opacity=".3"/><path fill="currentColor" d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/></svg>
             <%= dir.name %>
           </a>
