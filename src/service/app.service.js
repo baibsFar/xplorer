@@ -1,4 +1,4 @@
-import { readdir, stat } from 'fs/promises'
+import { readdir, lstat } from 'fs/promises'
 
 const KB = 1024
 const SIZE_LEVEL = ['B', 'KB', 'MB', 'GB', 'TB']
@@ -58,9 +58,9 @@ async function arrangeDirData(path) {
     
     const directories = []
     const files = []
-
+    
     for (let dir of dirs) {
-        const dirent = await stat(path + '/' + dir)
+        const dirent = await lstat(path + '/' + dir)
 
         if (dirent.isFile())
             files.push(createFileInfo(dir, dirent.mtime, dirent.birthtime, dirent.size))
