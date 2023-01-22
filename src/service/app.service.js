@@ -17,7 +17,7 @@ async function downloadFile(res, path, filesize) {
     res.setHeader('Content-Type', 'application/octet-stream')
     res.setHeader('Transfer-Encoding', 'deflate')
     res.setHeader('Content-Length', filesize)
-    res.sendFile(file)
+    res.sendFile(path)
 }
 
 /**
