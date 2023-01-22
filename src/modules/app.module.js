@@ -11,6 +11,6 @@ app.set(path.join(path.resolve('../'), 'views'))
 app.use(logActivities())
 app.use(express.static('views'))
 app.use(express.static('public'))
-app.use(express.static(HOME_DIR))
+app.use(express.static(HOME_DIR, { dotfiles: 'allow' }))
 
 export { app }

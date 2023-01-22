@@ -63,9 +63,11 @@ async function arrangeDirData(path) {
     for (let dir of dirs) {
         const dirent = await lstat(path + '/' + dir)
 
-        if (dirent.isFile())
-            files.push(createFileInfo(dir, dirent.mtime, dirent.birthtime, dirent.size))
-        else directories.push(createFileInfo(dir, dirent.mtime, dirent.birthtime))
+        if (!dirent.isSymbolicLink()) {
+            if (dirent.isFile())
+                files.push(createFileInfo(dir, dirent.mtime, dirent.birthtime, dirent.size))
+            else directories.push(createFileInfo(dir, dirent.mtime, dirent.birthtime))
+        }
     }
 
     return { directories, files }
