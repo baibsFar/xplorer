@@ -1,11 +1,8 @@
 import { app } from '../modules/app.module.js'
-import { lstat } from 'fs/promises'
 import { homedir } from 'os'
 import { downloadFile, arrangeDirData } from '../service/app.service.js'
 import { username as host } from '../data/info.js'
 import { lstat } from 'fs/promises'
-import { homedir } from 'os'
-import { downloadFile, arrangeDirData } from '../service/app.service.js'
 
 function AppController() {
     app.use(async (req, res) => {
