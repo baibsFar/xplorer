@@ -1,6 +1,7 @@
 import express from 'express'
 import path from 'path'
 import { logActivities } from '../middlewares/app.middleware.js'
+import { HOME_DIR } from '../data/info.js'
 
 const app = express()
 
@@ -9,5 +10,7 @@ app.set('view engine', 'ejs')
 app.set(path.join(path.resolve('../'), 'views'))
 app.use(logActivities())
 app.use(express.static('views'))
+app.use(express.static('public'))
+app.use(express.static(HOME_DIR))
 
 export { app }

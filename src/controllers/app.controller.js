@@ -4,7 +4,7 @@ import { homedir } from 'os'
 import { downloadFile, arrangeDirData } from '../service/app.service.js'
 
 function AppController() {
-    app.use(async (req, res, next) => {
+    app.use(async (req, res) => {
         try {
             const path = homedir() + decodeURI(req.path)
             const stats = await lstat(path)
@@ -13,8 +13,8 @@ function AppController() {
             else res.json(await arrangeDirData(path))
         } catch (e) {
             console.error(e)
+            res.json({ message: e })
         }
-        next()
     })
 }
 
