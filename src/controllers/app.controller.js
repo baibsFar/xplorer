@@ -5,6 +5,7 @@ import { lstat } from 'fs/promises'
 import { homedir } from 'os'
 import { downloadFile, arrangeDirData } from '../service/app.service.js'
 import { username as host } from '../data/info.js'
+<<<<<<< HEAD
 =======
 import { stat } from 'fs/promises'
 =======
@@ -13,6 +14,8 @@ import { lstat } from 'fs/promises'
 import { homedir } from 'os'
 import { downloadFile, arrangeDirData } from '../service/app.service.js'
 >>>>>>> 9875abf (feat: back functionnalities)
+=======
+>>>>>>> ca61d86 (fix: stylizing #1)
 
 function AppController() {
     app.use(async (req, res) => {
