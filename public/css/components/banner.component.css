@@ -1,0 +1,91 @@
+.banner {
+  position: relative;
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 50% 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 100%;
+  }
+}
+
+.banner-host {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-logo {
+  position: relative;
+  width: clamp(50px, 30%, 150px);
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary);
+}
+
+.banner-host-id {
+  position: relative;
+  font-weight: 600;
+  font-size: var(--txt-normal);
+}
+
+.banner-host-id span {
+  font-size: var(--txt-normal-2);
+}
+
+#app-container.dark .banner-host-id span {
+  color: var(--success);
+}
+
+#app-container.light .banner-host-id span {
+  color: var(--danger);
+}
+
+.banner-buttons {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-buttons button {
+  position: relative;
+  font-weight: 500;
+  font-size: var(--txt-normal);
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  margin-block: 10px;
+  transition: all .3s;
+}
+
+#app-container.dark .banner-buttons button {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+#app-container.dark .banner-buttons button:hover {
+  background-color: var(--white);
+  color: var(--primary);
+}
+
+#app-container.light .banner-buttons button {
+  outline: 2px solid var(--primary);
+  background-color: var(--white);
+  color: var(--primary);
+}
+
+#app-container.light .banner-buttons button:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
