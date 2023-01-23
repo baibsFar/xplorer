@@ -1,0 +1,13 @@
+:root {
+  /* Colors */
+  --primary: #497ce3;
+  --danger: #cc3333;
+  --success: #d5ff80;
+  --warn: #fbbc06;
+  --white: #fff;
+  --dark: #1f2430;
+
+  /* Font Size */
+  --txt-normal: 1.15em;
+  --txt-normal-2: 1.3em
+}
